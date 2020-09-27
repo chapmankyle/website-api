@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 jobs:
   build:
@@ -8,15 +8,24 @@ jobs:
           FLASK_CONFIG: testing
     steps:
       - checkout
+
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+
       - run:
           name: Install Python requirements in virtual environment
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
