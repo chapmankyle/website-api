@@ -6,7 +6,9 @@
   <img src="https://img.shields.io/github/v/release/chapmankyle/website-api.svg?" alt="Release"></img>
 </p>
 
-Official website is available at https://kylechapman.herokuapp.com/ :tada:
+Official API endpoint is available at https://kylechapman-api.herokuapp.com/ :zap:
+
+Official portfolio website is available at https://kylechapman.herokuapp.com/ :tada:
 
 This repository serves as the source code for the RESTful API that serves content to my website :cloud:
 
