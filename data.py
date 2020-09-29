@@ -22,14 +22,21 @@ class Data:
 				"github": "https://github.com/chapmankyle/carbon-engine",
 				"languages": "C++",
 				"description":
-					"A modular graphics engine built using C++ and Vulkan.<br/><br/>The purpose of this graphics engine is to make working with Vulkan easier by abstracting away the tedious work needed to setup Vulkan for on-screen rendering. It is also a learning exercise for me to understand how graphics engines work and how to make my very own.<br/><br/>This engine is in a very early alpha stage, but any criticism or ideas are welcome!"
+					"A modular graphics engine built using C++ and Vulkan.<br/><br/>The purpose of this graphics engine is to simplify the process of working with Vulkan by abstracting away the tedious work needed to setup both on and off-screen rendering. It is also a learning exercise for me to understand how graphics engines work and how to make my very own.<br/><br/>This engine is in a very early alpha stage, but any criticism or ideas are welcome!"
 			},
 			{
 				"title": "Work In Progress: smath",
 				"github": "https://github.com/chapmankyle/smath",
 				"languages": "C++",
 				"description":
-					"A header-only C++ math library designed for use in graphics software.<br/><br/><em>smath</em> is written in C++17, is platform independent and has no external dependencies. Performance was favoured over accuracy for some of the functions, and currently only a small set of functions have been implemented.<br/>My aim for this library is to be able to use this in any future games that I develop, so that I have complete control over what all the functions do. It also makes it easier to add new features if the need arises.<br/>Developing this library has been really interesting because I have to constantly learn new things."
+					"A header-only C++ math library designed for use in graphics software.<br/><br/><em>smath</em> is written in C++17, is platform independent and has no external dependencies. Currently, this library includes support for vectors, matrices and converting between degrees and radians.<br/>My aim for this library is to be able to use this in any future games that I develop, so that I have complete control over what all the functions do. It also makes it easier to add new features if the need arises.<br/>Developing this library has been really interesting because I have to constantly learn new things (such as quaternions)."
+			},
+			{
+				"title": "REST API for Personal Website",
+				"github": "https://github.com/chapmankyle/website-api",
+				"languages": "Python",
+				"description":
+					"A RESTful API implemented using Flask and Python.<br/><br/>Everything that you see in this page, and the experience page, is obtained from my REST API so that I can update the REST API with new information instead of updating this website."
 			},
 			{
 				"title": "Personal Website",
