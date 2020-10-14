@@ -29,14 +29,14 @@ class Data:
 				"github": "https://github.com/chapmankyle/smath",
 				"languages": "C++",
 				"description":
-					"A header-only C++ math library designed for use in graphics software.<br/><br/><em>smath</em> is written in C++17, is platform independent and has no external dependencies. Currently, this library includes support for vectors, matrices and converting between degrees and radians.<br/>My aim for this library is to be able to use this in any future games that I develop, so that I have complete control over what all the functions do. It also makes it easier to add new features if the need arises.<br/>Developing this library has been really interesting because I have to constantly learn new things (such as quaternions)."
+					"A header-only C++ math library designed for use in graphics software.<br/><br/><em>smath</em> is written in C++17, is platform independent and has no external dependencies. Currently, this library includes support for vectors, matrices and converting between degrees and radians.<br/>My aim for this library is to be able to use this in any future games that I develop, so that I have complete control over what all the functions do. It also makes it easier to add new features if the need arises.<br/><br/>Developing this library has been really interesting because I have to constantly learn new things (such as quaternions)."
 			},
 			{
 				"title": "Initialization file (.ini) parser",
 				"github": "https://github.com/chapmankyle/dotini",
 				"languages": "C++",
 				"description":
-					"A header-only C++ initialization / configuration file (<code>.ini</code>) parser.<br/><em>dotini</em> is written in C++17, built to favour readability over speed, for now, and stores all parsed key-value pairs inside a map for easy access. I wrote this parser to learn about file parsing in C++ and so that I can use it to read in values set in a <code>.ini</code> and use the values inside my <a href=\"https://github.com/chapmankyle/carbon-engine\">personal game engine</a>."
+					"A header-only C++ initialization / configuration file (<code>.ini</code>) parser.<br/><br/><em>dotini</em> is written in C++17, built to favour readability over speed, for now, and stores all parsed key-value pairs inside a map for easy access. I wrote this parser to learn about file parsing in C++ and so that I can use it to read in values set in a <code>.ini</code> and use the values inside my <a href=\"https://github.com/chapmankyle/carbon-engine\">personal game engine</a>.<br/><br/>In the future, I aim to improve the speed of file reading and parsing, as well as possibly adding more features. Any feedback is greatly appreciated!"
 			},
 			{
 				"title": "REST API for Personal Website",
@@ -68,14 +68,14 @@ class Data:
 				"github": "https://github.com/chapmankyle/euportal",
 				"languages": "React, Flask, HTML, CSS",
 				"description":
-					"Epi-Use website template that allows businesses to create their own shopping website.<br />A group of us students created a website for the company Epi-Use."
+					"Epi-Use website template that allows businesses to create their own shopping website.<br/>A group of us students created a website for the company Epi-Use."
 			},
 			{
 				"title": "Chatter",
 				"github": "https://github.com/chapmankyle/chatter",
 				"languages": "Java, SceneBuilder",
 				"description":
-					"A peer-to-peer communication program written in Java.<br />A server is set up that listens on a specific port number, then any clients that wish to connect will be connected to the server and can start sending messages to everyone on the server (global chat) or specific people (whisper)."
+					"A peer-to-peer communication program written in Java.<br/><br/>A server is set up that listens on a specific port number, then any clients that wish to connect will be connected to the server and can start sending messages to everyone on the server (global chat) or specific people (whisper)."
 			},
 			{
 				"title": "Scripts",
