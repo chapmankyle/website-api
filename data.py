@@ -32,6 +32,13 @@ class Data:
 					"A header-only C++ math library designed for use in graphics software.<br/><br/><em>smath</em> is written in C++17, is platform independent and has no external dependencies. Currently, this library includes support for vectors, matrices and converting between degrees and radians.<br/>My aim for this library is to be able to use this in any future games that I develop, so that I have complete control over what all the functions do. It also makes it easier to add new features if the need arises.<br/>Developing this library has been really interesting because I have to constantly learn new things (such as quaternions)."
 			},
 			{
+				"title": "Initialization file (.ini) parser",
+				"github": "https://github.com/chapmankyle/dotini",
+				"languages": "C++",
+				"description":
+					"A header-only C++ initialization / configuration file (<code>.ini</code>) parser.<br/><em>dotini</em> is written in C++17, built to favour readability over speed, for now, and stores all parsed key-value pairs inside a map for easy access. I wrote this parser to learn about file parsing in C++ and so that I can use it to read in values set in a <code>.ini</code> and use the values inside my <a href=\"https://github.com/chapmankyle/carbon-engine\">personal game engine</a>."
+			},
+			{
 				"title": "REST API for Personal Website",
 				"github": "https://github.com/chapmankyle/website-api",
 				"languages": "Python",
