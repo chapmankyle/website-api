@@ -125,7 +125,7 @@ class Data:
 			{
 				"color": "#e06c75",
 				"startYear": "2020",
-				"endYear": "present",
+				"endYear": "2020",
 				"title": "Bachelor of Science Honours degree in Computer Science (BScHons)",
 				"place": "University of Stellenbosch",
 				"description":
