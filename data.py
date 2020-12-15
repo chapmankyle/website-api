@@ -129,7 +129,7 @@ class Data:
 				"title": "Bachelor of Science Honours degree in Computer Science (BScHons)",
 				"place": "University of Stellenbosch",
 				"description":
-					"I am currently in my final year of a Bachelor of Science Honours degree in Mathematical Sciences in Computer Science, which ends in November 2020."
+					"I completed my Bachelor of Science degree in Mathematical Sciences in Computer Science, with an honours in Computer Science, in November 2020."
 			},
 			{
 				"color": "#61afef",
