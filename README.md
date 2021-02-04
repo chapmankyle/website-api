@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/v/release/chapmankyle/website-api.svg?" alt="Release"></img>
 </p>
 
-Official API endpoint is available at https://kylechapman-api.herokuapp.com/ :zap:
+Official API endpoint is available at https://kylechapman-api.netlify.app/ :zap:
 
 Official portfolio website is available at https://kylechapman.herokuapp.com/ :tada:
 
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 You can now run the RESTful API server by typing the following:
 ```bash
-gunicorn main:app
+python main.py
 ```
 
-The RESTful API is now accessible at http://localhost:8000 :tada:
+The RESTful API is now accessible at http://localhost:5000 :tada:
