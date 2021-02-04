@@ -8,7 +8,7 @@
 
 Official API endpoint is available at https://kylechapman-api.netlify.app/ :zap:
 
-Official portfolio website is available at https://kylechapman.herokuapp.com/ :tada:
+Official portfolio website is available at https://kylechapman.netlify.app/ :tada:
 
 This repository serves as the source code for the RESTful API that serves content to my website :cloud:
 
