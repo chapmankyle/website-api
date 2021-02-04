@@ -18,6 +18,13 @@ class Data:
 		"""Setup the projects data set."""
 		self.m_projects = [
 			{
+				"title": "Work In Progress: Siege Stats Discord Bot",
+				"github": "https://github.com/chapmankyle/siege-stats-bot",
+				"languages": "JavaScript",
+				"description":
+					"A Discord bot that displays information about a player of Tom Clancy's Rainbow Six Siege.<br/><br/>I always wanted to try make a Discord bot and so I decided to make a statistics tracker bot for a game that I enjoy playing. The bot is still in very early stages of development, so there are many features in the works. It has been a fun learning experience that involved learning how Discord handles bot interaction and finding out which endpoints Ubisoft exposes in order to retrieve relevant information."
+			},
+			{
 				"title": "Work In Progress: Carbon Engine",
 				"github": "https://github.com/chapmankyle/carbon-engine",
 				"languages": "C++",
