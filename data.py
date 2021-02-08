@@ -22,7 +22,7 @@ class Data:
 				"github": "https://github.com/chapmankyle/siege-stats-bot",
 				"languages": "JavaScript",
 				"image":
-					"https://user-images.githubusercontent.com/43512442/107220103-a089a000-6a1a-11eb-9336-d29ea0128103.PNG",
+					"https://user-images.githubusercontent.com/43512442/107221283-17736880-6a1c-11eb-85ce-b3ddc9d20088.PNG",
 				"description":
 					"A Discord bot that displays information about a player of Tom Clancy's Rainbow Six Siege.<br/><br/>I always wanted to try make a Discord bot and so I decided to make a statistics tracker bot for a game that I enjoy playing. The bot is still in very early stages of development, so there are many features in the works. It has been a fun learning experience that involved learning how Discord handles bot interaction and finding out which endpoints Ubisoft exposes in order to retrieve relevant information."
 			},
