@@ -3,15 +3,71 @@
 class Data:
 	"""Class representing the backend data that needs to be fetched by the API."""
 
+	m_story = []
 	m_projects = []
 	m_experience = []
 	m_education = []
 
 
 	def __init__(self):
+		self.init_story()
 		self.init_projects()
 		self.init_experience()
 		self.init_education()
+
+
+	def init_story(self):
+		"""Setup the sections in 'Personal Story'."""
+		self.m_story = [
+			{
+				"title": "Date of Birth",
+				"year": "1998",
+				"icon": "mdi-baby-face",
+				"color": "#e06c75",
+				"content":
+					"I was born on <strong>18 December 1998</strong> at Vergelegen Mediclinic in Somerset West, Cape Town, South Africa. I was told that I was born at roughly 09:00 in the morning and that it was a Friday."
+			},
+			{
+				"title": "My First Pet",
+				"year": "2002",
+				"icon": "mdi-dog",
+				"color": "#61afef",
+				"content":
+					"I got my first pet Labrador Retriever for my 4<sup>th</sup> birthday party and I immediately fell in love with her. <strong>Tazzy</strong> was her name and she was the most amazing pet I ever had."
+			},
+			{
+				"title": "Started Junior School",
+				"year": "2004",
+				"icon": "mdi-car-child-seat",
+				"color": "#98c379",
+				"content":
+					"I started my education at <strong>SACS Junior School</strong> in Newlands, Cape Town, South Africa. I used to make paper cell phones, because my mom wouldn't let me have a real phone until I was 13, and paper laptops to pretend that I was a <em>hackerman</em> that could take over the world."
+			},
+			{
+				"title": "Started High School",
+				"year": "2012",
+				"icon": "mdi-bus-school",
+				"color": "#e06c75",
+				"content":
+					"I started in grade 8 at <strong>SACS High School</strong> and completed my schooling education here. I took Biology, Geography and IT as my three subjects of choice from grades 10 to 12. I was told that we would be doing Java as the main programming language in IT and so I decided to get ahead of the class by studying <em>Javascript</em> in my holidays. Little did I know that <em>Java</em> and <em>Javascript</em> are two completely different programming languages."
+			},
+			{
+				"title": "Started Undergraduate Degree",
+				"year": "2017",
+				"icon": "mdi-school",
+				"color": "#61afef",
+				"content":
+					"I started my undergraduate degree in a <strong>Bachelor of Science in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 17 January 2017. After three years of study, many late nights and many visits to StackOverflow, I finished my undergraduate degree with 3 distinctions in November 2019.<br /><br />I took a wide variety of modules in my 3 years, namely:<ul><li>Probability Theory and Statistics</li><li>Scientific Communication</li><li>Mathematics</li><li>Economics</li><li>Operations Research</li><li>Applied Mathematics</li><li>Computer Science</li></ul>"
+			},
+			{
+				"title": "Started Postgraduate Degree",
+				"year": "2020",
+				"icon": "mdi-script",
+				"color": "#98c379",
+				"content":
+					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aim to start working in January 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
+			}
+		]
 
 
 	def init_projects(self):
