@@ -4,6 +4,7 @@ class Data:
 	"""Class representing the backend data that needs to be fetched by the API."""
 
 	m_banner = {}
+	m_about = {}
 
 	m_story = []
 	m_projects = []
@@ -13,6 +14,7 @@ class Data:
 
 	def __init__(self):
 		self.init_banner()
+		self.init_about()
 
 		self.init_story()
 		self.init_projects()
@@ -34,6 +36,21 @@ class Data:
 			"name": "Kyle Chapman",
 			"location": "Cape Town, South Africa",
 			"position": "Junior Software Developer"
+		}
+
+
+	def init_about(self):
+		"""Setup the content for the 'About Me' section."""
+		self.m_about = {
+			"title": "Hello there!",
+			"description":
+				"My name is <strong>Kyle Chapman</strong> and I am currently 22 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are Python, C++ and Golang.",
+			"content": [
+				"<strong>Python</strong> is useful because of how versatile the language is. A REST API is used to retrieve the information in the <em>Projects</em> and <em>Experience and Education</em> tabs above, which I wrote in Python. Flask was used to setup the endpoints, where some of the endpoints accept <code>POST</code> requests, allowing me to update the responses without touching the underlying code.",
+				"<strong>C++</strong> appeals to me because of how it gives you complete freedom to do what you want, but with great power comes great responsibility. I enjoy the lower level aspect of the language, where you have control of almost every aspect of the application."
+			],
+			"content-last":
+				"<strong>Golang</strong> is interesting because of how relatively new it is, compared to other languages, and how it deals with concurrency. I used Golang extensively for my Honours project and thoroughly enjoyed it."
 		}
 
 
@@ -249,6 +266,11 @@ class Data:
 	def get_banner(self):
 		"""Gets the banner content."""
 		return self.m_banner
+
+
+	def get_about(self):
+		"""Gets the 'About Me' section."""
+		return self.m_about
 
 
 	def get_story(self):

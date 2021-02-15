@@ -38,6 +38,13 @@ def banner():
 	return resp
 
 
+@app.route('/about', methods=['GET'])
+def about():
+	resp = jsonify(api_data.get_about())
+	resp.status_code = 200
+	return resp
+
+
 @app.route('/story', methods=['GET'])
 def story():
 	resp = jsonify(api_data.get_story())
