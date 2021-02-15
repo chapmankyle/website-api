@@ -16,6 +16,14 @@ class Data:
 		self.init_education()
 
 
+	#   _____ _   _ _____ _______
+	#  |_   _| \ | |_   _|__   __|
+	#    | | |  \| | | |    | |
+	#    | | | . ` | | |    | |
+	#   _| |_| |\  |_| |_   | |
+	#  |_____|_| \_|_____|  |_|
+	#
+
 	def init_story(self):
 		"""Setup the sections in 'Personal Story'."""
 		self.m_story = [
@@ -217,6 +225,18 @@ class Data:
 		]
 
 
+	#    _____ ______ _______
+	#   / ____|  ____|__   __|
+	#  | |  __| |__     | |
+	#  | | |_ |  __|    | |
+	#  | |__| | |____   | |
+	#   \_____|______|  |_|
+	#
+
+	def get_story(self):
+		"""Gets the current personal story."""
+		return self.m_story
+
 	def get_projects(self):
 		"""Gets the current projects that I am working on."""
 		return self.m_projects
@@ -231,6 +251,14 @@ class Data:
 		"""Gets the education levels that I have."""
 		return self.m_education
 
+
+	#            _____  _____
+	#      /\   |  __ \|  __ \
+	#     /  \  | |  | | |  | |
+	#    / /\ \ | |  | | |  | |
+	#   / ____ \| |__| | |__| |
+	#  /_/    \_\_____/|_____/
+	#
 
 	def add_project(self, proj):
 		"""Adds a project to the list of projects."""
