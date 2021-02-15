@@ -3,6 +3,8 @@
 class Data:
 	"""Class representing the backend data that needs to be fetched by the API."""
 
+	m_banner = {}
+
 	m_story = []
 	m_projects = []
 	m_experience = []
@@ -10,6 +12,8 @@ class Data:
 
 
 	def __init__(self):
+		self.init_banner()
+
 		self.init_story()
 		self.init_projects()
 		self.init_experience()
@@ -23,6 +27,15 @@ class Data:
 	#   _| |_| |\  |_| |_   | |
 	#  |_____|_| \_|_____|  |_|
 	#
+
+	def init_banner(self):
+		"""Setup the content for the Home page banner."""
+		self.m_banner = {
+			"name": "Kyle Chapman",
+			"location": "Cape Town, South Africa",
+			"position": "Junior Software Developer"
+		}
+
 
 	def init_story(self):
 		"""Setup the sections in 'Personal Story'."""
@@ -233,9 +246,15 @@ class Data:
 	#   \_____|______|  |_|
 	#
 
+	def get_banner(self):
+		"""Gets the banner content."""
+		return self.m_banner
+
+
 	def get_story(self):
 		"""Gets the current personal story."""
 		return self.m_story
+
 
 	def get_projects(self):
 		"""Gets the current projects that I am working on."""
