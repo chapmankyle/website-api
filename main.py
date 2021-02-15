@@ -31,6 +31,27 @@ def home():
 	return resp
 
 
+@app.route('/banner', methods=['GET'])
+def banner():
+	resp = jsonify(api_data.get_banner())
+	resp.status_code = 200
+	return resp
+
+
+@app.route('/about', methods=['GET'])
+def about():
+	resp = jsonify(api_data.get_about())
+	resp.status_code = 200
+	return resp
+
+
+@app.route('/story', methods=['GET'])
+def story():
+	resp = jsonify(api_data.get_story())
+	resp.status_code = 200
+	return resp
+
+
 @app.route('/projects', methods=['GET', 'POST'])
 def projects():
 	if request.method == 'POST':

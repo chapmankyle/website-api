@@ -3,15 +3,109 @@
 class Data:
 	"""Class representing the backend data that needs to be fetched by the API."""
 
+	m_banner = {}
+	m_about = {}
+
+	m_story = []
 	m_projects = []
 	m_experience = []
 	m_education = []
 
 
 	def __init__(self):
+		self.init_banner()
+		self.init_about()
+
+		self.init_story()
 		self.init_projects()
 		self.init_experience()
 		self.init_education()
+
+
+	#   _____ _   _ _____ _______
+	#  |_   _| \ | |_   _|__   __|
+	#    | | |  \| | | |    | |
+	#    | | | . ` | | |    | |
+	#   _| |_| |\  |_| |_   | |
+	#  |_____|_| \_|_____|  |_|
+	#
+
+	def init_banner(self):
+		"""Setup the content for the Home page banner."""
+		self.m_banner = {
+			"name": "Kyle Chapman",
+			"location": "Cape Town, South Africa",
+			"position": "Junior Software Developer"
+		}
+
+
+	def init_about(self):
+		"""Setup the content for the 'About Me' section."""
+		self.m_about = {
+			"title": "Hello there!",
+			"description":
+				"My name is <strong>Kyle Chapman</strong> and I am currently 22 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are Python, C++ and Golang.",
+			"content": [
+				"<strong>Python</strong> is useful because of how versatile the language is. A REST API is used to retrieve the information in the <em>Projects</em> and <em>Experience and Education</em> tabs above, which I wrote in Python. Flask was used to setup the endpoints, where some of the endpoints accept <code>POST</code> requests, allowing me to update the responses without touching the underlying code.",
+				"<strong>C++</strong> appeals to me because of how it gives you complete freedom to do what you want, but with great power comes great responsibility. I enjoy the lower level aspect of the language, where you have control of almost every aspect of the application."
+			],
+			"content-last":
+				"<strong>Golang</strong> is interesting because of how relatively new it is, compared to other languages, and how it deals with concurrency. I used Golang extensively for my Honours project and thoroughly enjoyed it."
+		}
+
+
+	def init_story(self):
+		"""Setup the sections in 'Personal Story'."""
+		self.m_story = [
+			{
+				"title": "Date of Birth",
+				"year": "1998",
+				"icon": "mdi-baby-face",
+				"color": "#e06c75",
+				"content":
+					"I was born on <strong>18 December 1998</strong> at Vergelegen Mediclinic in Somerset West, Cape Town, South Africa. I was told that I was born at roughly 09:00 in the morning and that it was a Friday."
+			},
+			{
+				"title": "My First Pet",
+				"year": "2002",
+				"icon": "mdi-dog",
+				"color": "#61afef",
+				"content":
+					"I got my first pet Labrador Retriever for my 4<sup>th</sup> birthday party and I immediately fell in love with her. <strong>Tazzy</strong> was her name and she was the most amazing pet I ever had."
+			},
+			{
+				"title": "Started Junior School",
+				"year": "2004",
+				"icon": "mdi-car-child-seat",
+				"color": "#98c379",
+				"content":
+					"I started my education at <strong>SACS Junior School</strong> in Newlands, Cape Town, South Africa. I used to make paper cell phones, because my mom wouldn't let me have a real phone until I was 13, and paper laptops to pretend that I was a <em>hackerman</em> that could take over the world."
+			},
+			{
+				"title": "Started High School",
+				"year": "2012",
+				"icon": "mdi-bus-school",
+				"color": "#e06c75",
+				"content":
+					"I started in grade 8 at <strong>SACS High School</strong> and completed my schooling education here. I took Biology, Geography and IT as my three subjects of choice from grades 10 to 12. I was told that we would be doing Java as the main programming language in IT and so I decided to get ahead of the class by studying <em>Javascript</em> in my holidays. Little did I know that <em>Java</em> and <em>Javascript</em> are two completely different programming languages."
+			},
+			{
+				"title": "Started Undergraduate Degree",
+				"year": "2017",
+				"icon": "mdi-school",
+				"color": "#61afef",
+				"content":
+					"I started my undergraduate degree in a <strong>Bachelor of Science in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 17 January 2017. After three years of study, many late nights and many visits to StackOverflow, I finished my undergraduate degree with 3 distinctions in November 2019.<br /><br />I took a wide variety of modules in my 3 years, namely:<ul><li>Probability Theory and Statistics</li><li>Scientific Communication</li><li>Mathematics</li><li>Economics</li><li>Operations Research</li><li>Applied Mathematics</li><li>Computer Science</li></ul>"
+			},
+			{
+				"title": "Started Postgraduate Degree",
+				"year": "2020",
+				"icon": "mdi-script",
+				"color": "#98c379",
+				"content":
+					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aim to start working in January 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
+			}
+		]
 
 
 	def init_projects(self):
@@ -161,6 +255,29 @@ class Data:
 		]
 
 
+	#    _____ ______ _______
+	#   / ____|  ____|__   __|
+	#  | |  __| |__     | |
+	#  | | |_ |  __|    | |
+	#  | |__| | |____   | |
+	#   \_____|______|  |_|
+	#
+
+	def get_banner(self):
+		"""Gets the banner content."""
+		return self.m_banner
+
+
+	def get_about(self):
+		"""Gets the 'About Me' section."""
+		return self.m_about
+
+
+	def get_story(self):
+		"""Gets the current personal story."""
+		return self.m_story
+
+
 	def get_projects(self):
 		"""Gets the current projects that I am working on."""
 		return self.m_projects
@@ -175,6 +292,14 @@ class Data:
 		"""Gets the education levels that I have."""
 		return self.m_education
 
+
+	#            _____  _____
+	#      /\   |  __ \|  __ \
+	#     /  \  | |  | | |  | |
+	#    / /\ \ | |  | | |  | |
+	#   / ____ \| |__| | |__| |
+	#  /_/    \_\_____/|_____/
+	#
 
 	def add_project(self, proj):
 		"""Adds a project to the list of projects."""

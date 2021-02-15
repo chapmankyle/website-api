@@ -12,6 +12,18 @@ Official portfolio website is available at https://kylechapman.netlify.app/ :tad
 
 This repository serves as the source code for the RESTful API that serves content to my website :cloud:
 
+# Routes :surfer:
+
+| Endpoint      | Methods       | Description |
+| :------------ | :-----------: | :---------- |
+| `/`           | `GET`         | Returns a welcome message. |
+| `/banner`     | `GET`         | Returns the banner information displayed on the Home page. |
+| `/about`      | `GET`         | Returns the 'About Me' information displayed on the Home page. |
+| `/story`      | `GET`         | Returns the 'Personal Story' information displayed on the Home page. |
+| `/projects`   | `GET`, `POST` | Returns the current projects (`GET`) or adds a project (`POST`) |
+| `/experience` | `GET`, `POST` | Returns the current experience (`GET`) or adds to the experiences (`POST`) |
+| `/education`  | `GET`, `POST` | Returns the current education (`GET`) or adds an education (`POST`) |
+
 # Setup :rocket:
 
 Clone the repository and navigate to the `website-api` directory.
@@ -37,6 +49,7 @@ pip install -r requirements.txt
 
 You can now run the RESTful API server by typing the following:
 ```bash
+# run locally
 python main.py
 ```
 
