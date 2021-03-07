@@ -35,7 +35,7 @@ class Data:
 		self.m_banner = {
 			"name": "Kyle Chapman",
 			"location": "Cape Town, South Africa",
-			"position": "Junior Software Developer"
+			"position": "Application Developer at ydangle apps"
 		}
 
 
@@ -104,6 +104,14 @@ class Data:
 				"color": "#98c379",
 				"content":
 					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aim to start working in January 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
+			},
+			{
+				"title": "Started as Application Developer at ydangle apps",
+				"year": "2021",
+				"icon": "mdi-laptop",
+				"color": "#e06c75",
+				"content":
+					"I started my position as an <strong>application developer</a> at ydangle apps in February 2021. I am working on the <a href='https://spatialweb.net/'>SpatialWeb</a> platform, which can be used to host virtual meetings and events."
 			}
 		]
 
