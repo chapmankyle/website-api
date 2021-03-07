@@ -111,7 +111,7 @@ class Data:
 				"icon": "mdi-laptop",
 				"color": "#e06c75",
 				"content":
-					"I started my position as an <strong>application developer</a> at ydangle apps in February 2021. I am working on the <a href='https://spatialweb.net/'>SpatialWeb</a> platform, which can be used to host virtual meetings and events."
+					"I started my position as an <strong>application developer</strong> at ydangle apps in February 2021. I am working on the <a href='https://spatialweb.net/' target='_blank'>SpatialWeb</a> platform, which can be used to host virtual meetings and events."
 			}
 		]
 
