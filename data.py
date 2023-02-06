@@ -34,8 +34,8 @@ class Data:
 		"""Setup the content for the Home page banner."""
 		self.m_banner = {
 			"name": "Kyle Chapman",
-			"location": "Cape Town, South Africa",
-			"position": "Application Developer at ydangle apps"
+			"location": "South Africa",
+			"position": "3D Web Developer at ydangle apps"
 		}
 
 
@@ -44,13 +44,12 @@ class Data:
 		self.m_about = {
 			"title": "Hello there!",
 			"description":
-				"My name is <strong>Kyle Chapman</strong> and I am currently 22 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are Python, C++ and Golang.",
+				"My name is <strong>Kyle Chapman</strong> and I am currently 24 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are TypeScript and Golang.",
 			"content": [
-				"<strong>Python</strong> is useful because of how versatile the language is. A REST API is used to retrieve the information in the <em>Projects</em> and <em>Experience and Education</em> tabs above, which I wrote in Python. Flask was used to setup the endpoints, where some of the endpoints accept <code>POST</code> requests, allowing me to update the responses without touching the underlying code.",
-				"<strong>C++</strong> appeals to me because of how it gives you complete freedom to do what you want, but with great power comes great responsibility. I enjoy the lower level aspect of the language, where you have control of almost every aspect of the application."
+				"<strong>TypeScript</strong> is useful because it allows you to see any potential type issues before they occur, as well as making the code easier to maintain. I wrote this website using Vue and TypeScript and thoroughly enjoyed the process.",
 			],
 			"content_last":
-				"<strong>Golang</strong> is interesting because of how relatively new it is, compared to other languages, and how it deals with concurrency. I used Golang extensively for my Honours project and thoroughly enjoyed it."
+				"<strong>Golang</strong> is interesting because of how relatively new it is, compared to other languages, and how it deals with concurrency. I used Golang extensively for my Honours project and really enjoyed it."
 		}
 
 
@@ -58,28 +57,12 @@ class Data:
 		"""Setup the sections in 'Personal Story'."""
 		self.m_story = [
 			{
-				"title": "Date of Birth",
-				"year": "1998",
-				"icon": "mdi-baby-face",
-				"color": "#e06c75",
-				"content":
-					"I was born on <strong>18 December 1998</strong> at Vergelegen Mediclinic in Somerset West, Cape Town, South Africa. I was told that I was born at roughly 09:00 in the morning and that it was a Friday."
-			},
-			{
-				"title": "My First Pet",
-				"year": "2002",
-				"icon": "mdi-dog",
-				"color": "#61afef",
-				"content":
-					"I got my first pet Labrador Retriever for my 4<sup>th</sup> birthday party and I immediately fell in love with her. <strong>Tazzy</strong> was her name and she was the most amazing pet I ever had."
-			},
-			{
 				"title": "Started Junior School",
 				"year": "2004",
 				"icon": "mdi-car-child-seat",
 				"color": "#98c379",
 				"content":
-					"I started my education at <strong>SACS Junior School</strong> in Newlands, Cape Town, South Africa. I used to make paper cell phones, because my mom wouldn't let me have a real phone until I was 13, and paper laptops to pretend that I was a <em>hackerman</em> that could take over the world."
+					"I started my education at <strong>SACS Junior School</strong> in Cape Town, South Africa. I used to make paper cell phones, because my mom wouldn't let me have a real phone until I was 13, and paper laptops to pretend that I was a programmer."
 			},
 			{
 				"title": "Started High School",
@@ -87,7 +70,7 @@ class Data:
 				"icon": "mdi-bus-school",
 				"color": "#e06c75",
 				"content":
-					"I started in grade 8 at <strong>SACS High School</strong> and completed my schooling education here. I took Biology, Geography and IT as my three subjects of choice from grades 10 to 12. I was told that we would be doing Java as the main programming language in IT and so I decided to get ahead of the class by studying <em>Javascript</em> in my holidays. Little did I know that <em>Java</em> and <em>Javascript</em> are two completely different programming languages."
+					"I started in grade 8 at <strong>SACS High School</strong> and completed my schooling education there. I took Biology, Geography and IT as my three subjects of choice from grades 10 to 12. I was told that we would be doing Java as the main programming language in IT and so I decided to get ahead of the class by studying <em>Javascript</em> in my holidays. Little did I know that <em>Java</em> and <em>Javascript</em> are two completely different programming languages."
 			},
 			{
 				"title": "Started Undergraduate Degree",
@@ -103,15 +86,15 @@ class Data:
 				"icon": "mdi-script",
 				"color": "#98c379",
 				"content":
-					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aim to start working in January 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
+					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aimed to start working in February 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
 			},
 			{
-				"title": "Started as Application Developer at ydangle apps",
+				"title": "Started as 3D Web Developer at ydangle apps",
 				"year": "2021",
 				"icon": "mdi-laptop",
 				"color": "#e06c75",
 				"content":
-					"I started my position as an <strong>application developer</strong> at ydangle apps in February 2021. I am working on the <a href='https://spatialweb.net/' target='_blank'>SpatialWeb</a> platform, which can be used to host virtual meetings and events."
+					"I started my position as a <strong>3D web developer</strong> at ydangle apps in February 2021. I am currently working on a 3D, social website where you can explore user-created worlds or create your own world. My role is to perform code review, release new versions of the platform, add new features, enhance already existing features, fix bugs and write developer documentation. <br /><br />The main systems I am most proud of are: <ul><li>Implementing a chat system</li><li>Implementing editor tools so that users can customize 3D objects within their worlds</li><li>Re-writing the core user-interface to be more user-friendly.</li></ul><br /><strong>Technology stack:</strong> React, JavaScript, Firebase, three.js"
 			}
 		]
 
@@ -209,16 +192,26 @@ class Data:
 		self.m_experience = [
 			{
 				"color": "#e06c75",
+				"startDate": "Feb 2021",
+				"endDate": "present",
+				"title": "3D Web Developer",
+				"company": "ydangle apps (Pty) Ltd.",
+				"description":
+					"I am currently working as a web developer on a 3D, social website where you can explore user-created worlds or create your own world. My role is to perform code review, release new versions of the platform, add new features, enhance already existing features, fix bugs and write developer documentation. The main systems I am most proud of are: implementing a chat system, implementing editor tools so that users can customize 3D objects within their worlds, and re-writing the core user-interface to make it more user-friendly.",
+				"technologies": ["React", "JavaScript", "Firebase", "three.js"]
+			},
+			{
+				"color": "#61afef",
 				"startDate": "Dec 2019",
 				"endDate": "Jan 2020",
 				"title": "Web Development Internship",
 				"company": "VASTech (Pty) Ltd.",
 				"description":
-					"I worked on a visualization for geospatial data using OpenLayers, which allowed a user to interact with a map of the world. Various data points could be plotted and played around with in order to visualize specific elements of the data points. I learnt a lot about Vue as a whole, how to integrate OpenLayers with Vue and all the quirks of Javascript/Typescript development.",
-				"technologies": ["VueJS", "Javascript", "Typescript", "OpenLayers"]
+					"I worked on a visualization for geospatial data using OpenLayers, which allowed a user to interact with a map of the world. Various data points could be plotted and played around with in order to visualize specific elements of the data points. I learnt a lot about Vue as a whole, how to integrate OpenLayers with Vue and all the quirks of TypeScript development.",
+				"technologies": ["Vue.js", "TypeScript", "OpenLayers"]
 			},
 			{
-				"color": "#61afef",
+				"color": "#98c379",
 				"startDate": "Jun 2019",
 				"endDate": "Jul 2019",
 				"title": "Python Internship",
