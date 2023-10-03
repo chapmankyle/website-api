@@ -144,7 +144,7 @@ class Data:
 				"github": "https://github.com/chapmankyle/website",
 				"languages": "VueJS, Javascript, Typescript, HTML, CSS",
 				"image":
-					"https://user-images.githubusercontent.com/43512442/90319271-d0a62980-df36-11ea-9380-33eef30c6830.png",
+					"https://github-production-user-asset-6210df.s3.amazonaws.com/43512442/272195556-a6dbbfc7-353e-4fba-84dd-7871d1c27deb.png",
 				"description":
 					"My personal portfolio website that was made using VueJS and Typescript.<br/><br/>I wanted to use my knowledge of web development to create a website for myself, in order to showcase what I have to offer. I made an effort to make my website quite personal so that any person who visits will have a deeper understanding of who I am, as opposed to simply what my experience and qualifications are."
 			},
