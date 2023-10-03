@@ -35,7 +35,7 @@ class Data:
 		self.m_banner = {
 			"name": "Kyle Chapman",
 			"location": "South Africa",
-			"position": "3D Web Developer at ydangle apps"
+			"position": "Full-stack Software Engineer at ydangle apps"
 		}
 
 
@@ -89,12 +89,12 @@ class Data:
 					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aimed to start working in February 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
 			},
 			{
-				"title": "Started as 3D Web Developer at ydangle apps",
+				"title": "Started as Full-stack Software Engineer at ydangle apps",
 				"year": "2021",
 				"icon": "mdi-laptop",
 				"color": "#e06c75",
 				"content":
-					"I started my position as a <strong>3D web developer</strong> at ydangle apps in February 2021. I am currently working on a 3D, social website where you can explore user-created worlds or create your own world. My role is to perform code review, release new versions of the platform, add new features, enhance already existing features, fix bugs and write developer documentation. <br /><br />The main systems I am most proud of are: <ul><li>Implementing a chat system</li><li>Implementing editor tools so that users can customize 3D objects within their worlds</li><li>Re-writing the core user-interface to be more user-friendly.</li></ul><br /><strong>Technology stack:</strong> React, JavaScript, Firebase, three.js"
+					"I started my position as a <strong>full-stack software engineer</strong> at ydangle apps in February 2021. I am part of a team that is developing a 3D, social website that allows users to interact with one another in a shared environment. Environments can be created by users and are fully customizable, from the skybox to the audio you hear when walking up to something, which allows for truly unique experiences that cannot be found elsewhere. We use our own implementation of spatial audio that plays sounds relative to where you are in the environment, making it feel more like reality.<br /><br />Our main focus is to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. Our platform is designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions so far have been: <ul><li>Implemented a new chat system (with features such as reactions, threads, groups etc.)</li><li>Rewrote the logic for our editor tools (allowing users more control over how they want their environment to look and feel)</li><li>Added multiple third-party integrations (Slack, Teams, Sketchfab, etc.)</li><li>Updated the UX and UI to ensure a smooth and visually-appealing experience</li></ul><br /><strong>Technology stack:</strong> React, JavaScript, Firebase, three.js"
 			}
 		]
 
@@ -194,10 +194,10 @@ class Data:
 				"color": "#e06c75",
 				"startDate": "Feb 2021",
 				"endDate": "present",
-				"title": "3D Web Developer",
+				"title": "Full-stack Software Engineer",
 				"company": "ydangle apps (Pty) Ltd.",
 				"description":
-					"I am currently working as a web developer on a 3D, social website where you can explore user-created worlds or create your own world. My role is to perform code review, release new versions of the platform, add new features, enhance already existing features, fix bugs and write developer documentation. The main systems I am most proud of are: implementing a chat system, implementing editor tools so that users can customize 3D objects within their worlds, and re-writing the core user-interface to make it more user-friendly.",
+					"I am part of a team that is developing a 3D, social website that allows users to interact with one another in a shared environment. Environments can be created by users and are fully customizable, from the skybox to the audio you hear when walking up to something, which allows for truly unique experiences that cannot be found elsewhere. We use our own implementation of spatial audio that plays sounds relative to where you are in the environment, making it feel more like reality.<br /><br />Our main focus is to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. Our platform is designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions so far have been to solely implement a new chat system (with features such as reactions, threads, groups etc.), rewrite the logic for our editor tools (allowing users more control over how they want their environment to look and feel), add multiple third-party integrations (Slack, Teams, Sketchfab, etc.) and update the UX and UI to ensure a smooth and visually-appealing experience.",
 				"technologies": ["React", "JavaScript", "Firebase", "three.js"]
 			},
 			{
