@@ -34,8 +34,8 @@ class Data:
 		"""Setup the content for the Home page banner."""
 		self.m_banner = {
 			"name": "Kyle Chapman",
-			"location": "South Africa",
-			"position": "Full-stack Software Engineer at ydangle apps"
+			"location": "Amsterdam, Netherlands",
+			"position": "Software Engineer at Zilverline"
 		}
 
 
@@ -44,7 +44,7 @@ class Data:
 		self.m_about = {
 			"title": "Hello there!",
 			"description":
-				"My name is <strong>Kyle Chapman</strong> and I am currently 24 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are TypeScript and Golang.",
+				"My name is <strong>Kyle Chapman</strong> and I am currently 25 years old with a Bachelor of Science Honours degree in Computer Science from Stellenbosch University. My current interests are TypeScript and Golang.",
 			"content": [
 				"<strong>TypeScript</strong> is useful because it allows you to see any potential type issues before they occur, as well as making the code easier to maintain. I wrote this website using Vue and TypeScript and thoroughly enjoyed the process.",
 			],
@@ -89,12 +89,20 @@ class Data:
 					"I started my postgraduate degree in a <strong>Bachelor of Science Honours in Mathematical Sciences in Computer Science</strong> at the University of Stellenbosch on 3 February 2020. After a full year of non-stop work and an ongoing pandemic, I finished my postgraduate degree in November 2020 and aimed to start working in February 2021. <br /><br />The modules that I took in the first semester, from February to July, were:<ul><li>Computational Intelligence</li><li>Advanced Algorithms</li><li>Space Science</li></ul><br />The modules that I took in the second semester, from July to November, were:<ul><li>Digital Image Processing</li><li>Functional Programming</li><li>Machine Learning</li></ul>"
 			},
 			{
-				"title": "Started as Full-stack Software Engineer at ydangle apps",
+				"title": "Started as Fullstack Software Engineer at ydangle apps",
 				"year": "2021",
-				"icon": "mdi-laptop",
+				"icon": "mdi-earth",
 				"color": "#e06c75",
 				"content":
-					"I started my position as a <strong>full-stack software engineer</strong> at ydangle apps in February 2021. I am part of a team that is developing a 3D, social website that allows users to interact with one another in a shared environment. Environments can be created by users and are fully customizable, from the skybox to the audio you hear when walking up to something, which allows for truly unique experiences that cannot be found elsewhere. We use our own implementation of spatial audio that plays sounds relative to where you are in the environment, making it feel more like reality.<br /><br />Our main focus is to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. Our platform is designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions so far have been: <ul><li>Implemented a new chat system (with features such as reactions, threads, groups etc.)</li><li>Rewrote the logic for our editor tools (allowing users more control over how they want their environment to look and feel)</li><li>Added multiple third-party integrations (Slack, Teams, Sketchfab, etc.)</li><li>Updated the UX and UI to ensure a smooth and visually-appealing experience</li></ul><br /><strong>Technology stack:</strong> React, JavaScript, Firebase, three.js"
+					"I started my position as a <strong>fullstack software engineer</strong> at ydangle apps in February 2021. I was part of a team that was developing a 3D, social website that allowed users to interact with one another in a shared environment. Environments could be created by users and were fully customizable, from the skybox to the audio you heard when walking up to something, which allowed for truly unique experiences that could not be found elsewhere. We used our own implementation of spatial audio that played sounds relative to where you were in the environment, making it feel more like reality.<br /><br />Our main focus was to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. The platform was designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions were: <ul><li>Implemented a new chat system (with features such as reactions, threads, groups etc.)</li><li>Rewrote the logic for our editor tools (allowing users more control over how they wanted their environment to look and feel)</li><li>Added multiple third-party integrations (Slack, Teams, Sketchfab, etc.)</li><li>Updated the UX and UI to ensure a smooth and visually-appealing experience</li></ul><br /><strong>Technology stack:</strong> React, JavaScript, Firebase, three.js"
+			},
+			{
+				"title": "Started as Software Engineer at Zilverline",
+				"year": "2024",
+				"icon": "mdi-laptop",
+				"color": "#61afef",
+				"content":
+					"I started my position as a <strong>software engineer</strong> at Zilverline in April 2024. I am part of a team that is developing an e-commerce platform that allows various shops to each sell their own products. We support various payment methods (iDEAL, Klarna, etc.), product returns, order tracking, product variations (i.e. \"XS\", \"S\" etc. for clothing items) and much more.<br /><br />Our main focus is to make it as easy as possible for people to create their own shops and start selling their products, and for customers to be able to easily support any shops of their choice by buying their products.<br /><br /><strong>Technology stack:</strong> Ruby on Rails, Stimulus, jQuery, Bootstrap, PostgreSQL, GitHub Actions"
 			}
 		]
 
@@ -192,12 +200,22 @@ class Data:
 		self.m_experience = [
 			{
 				"color": "#e06c75",
-				"startDate": "Feb 2021",
+				"startDate": "Apr 2024",
 				"endDate": "present",
-				"title": "Full-stack Software Engineer",
+				"title": "Software Engineer",
+				"company": "Zilverline B.V.",
+				"description":
+					"I am part of a team that is developing an e-commerce platform that allows various shops to each sell their own products. We support various payment methods (iDEAL, Klarna, etc.), product returns, order tracking, product variations (i.e. \"XS\", \"S\" etc. for clothing items) and much more.<br /><br />Our main focus is to make it as easy as possible for people to create their own shops and start selling their products, and for customers to be able to easily support any shops of their choice by buying their products.",
+				"technologies": ["Ruby on Rails", "Stimulus", "jQuery", "Bootstrap", "PostgreSQL", "GitHub Actions"]
+			},
+			{
+				"color": "#e06c75",
+				"startDate": "Feb 2021",
+				"endDate": "Mar 2024",
+				"title": "Fullstack Software Engineer",
 				"company": "ydangle apps (Pty) Ltd.",
 				"description":
-					"I am part of a team that is developing a 3D, social website that allows users to interact with one another in a shared environment. Environments can be created by users and are fully customizable, from the skybox to the audio you hear when walking up to something, which allows for truly unique experiences that cannot be found elsewhere. We use our own implementation of spatial audio that plays sounds relative to where you are in the environment, making it feel more like reality.<br /><br />Our main focus is to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. Our platform is designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions so far have been to solely implement a new chat system (with features such as reactions, threads, groups etc.), rewrite the logic for our editor tools (allowing users more control over how they want their environment to look and feel), add multiple third-party integrations (Slack, Teams, Sketchfab, etc.) and update the UX and UI to ensure a smooth and visually-appealing experience.",
+					"I was part of a team that was developing a 3D, social website that allowed users to interact with one another in a shared environment. Environments could be created by users and were fully customizable, from the skybox to the audio you heard when walking up to something, which allowed for truly unique experiences that could not be found elsewhere. We used our own implementation of spatial audio that played sounds relative to where you were in the environment, making it feel more like reality.<br /><br />Our main focus was to make it easy for users to attend events and social gatherings from the comfort of their own home, through our 3D website. The platform was designed to host thousands of concurrent users in a single environment at any given moment.<br /><br />Some of my contributions were to solely implement a new chat system (with features such as reactions, threads, groups etc.), rewrite the logic for our editor tools (allowing users more control over how they wanted their environment to look and feel), add multiple third-party integrations (Slack, Teams, Sketchfab, etc.) and update the UX and UI to ensure a smooth and visually-appealing experience.",
 				"technologies": ["React", "JavaScript", "Firebase", "three.js"]
 			},
 			{
