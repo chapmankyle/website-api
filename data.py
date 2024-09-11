@@ -199,7 +199,7 @@ class Data:
 		"""Setup the experience data set."""
 		self.m_experience = [
 			{
-				"color": "#e06c75",
+				"color": "#98c379",
 				"startDate": "Apr 2024",
 				"endDate": "present",
 				"title": "Software Engineer",
