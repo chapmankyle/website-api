@@ -1,6 +1,7 @@
 <h1 align="center">Website RESTful API :cloud:</h1>
 
 <p align="center">
+  <img src="https://github.com/chapmankyle/website-api/actions/workflows/deploy.yml/badge.svg" alt="Deploy status"></img>
   <img src="https://img.shields.io/github/license/chapmankyle/website-api.svg?" alt="license: GPL-3.0"></img>
   <img src="https://img.shields.io/github/v/release/chapmankyle/website-api.svg?" alt="Release"></img>
 </p>
