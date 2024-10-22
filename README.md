@@ -34,7 +34,7 @@ git clone git@github.com:chapmankyle/website-api.git
 cd website-api
 ```
 
-You need to have <a href="https://bun.sh/"><img src="images/bun.svg" width="16" height="16" style="position: relative; top: 3px;" /> Bun</a> installed in order to compile from the source code.
+You need to have <a href="https://bun.sh/"><img src="public/static/bun.svg" width="16" height="16" style="position: relative; top: 3px;" /> Bun</a> installed in order to compile from the source code.
 
 # Building :hammer:
 
