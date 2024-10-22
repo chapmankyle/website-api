@@ -3,7 +3,7 @@
     "name": "Kyle Chapman",
     "initials": "KC",
     "url": "https://kylechapman.netlify.app",
-    "location": "Amsterdam, Netherlands 🇳🇱",
+    "location": "Amsterdam, Netherlands",
     "title": "Full Stack Software Engineer",
     "summary": "I love learning new things and working on interesting projects",
     "languages": ["English (Native)", "Nederlands (A2)"]
@@ -61,7 +61,7 @@
       "technologies": ["React", "JavaScript", "Firebase", "three.js"]
     },
     {
-      "id": 2,
+      "id": 3,
       "startDate": "Dec 2019",
       "endDate": "Jan 2020",
       "duration": "2 mos",
