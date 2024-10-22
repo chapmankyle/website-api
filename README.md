@@ -1,7 +1,6 @@
 <h1 align="center">Website RESTful API :cloud:</h1>
 
 <p align="center">
-  <img src="https://circleci.com/gh/chapmankyle/website-api/tree/master.svg?style=svg" alt="Build Status"></img>
   <img src="https://img.shields.io/github/license/chapmankyle/website-api.svg?" alt="license: GPL-3.0"></img>
   <img src="https://img.shields.io/github/v/release/chapmankyle/website-api.svg?" alt="Release"></img>
 </p>
@@ -35,8 +34,7 @@ git clone git@github.com:chapmankyle/website-api.git
 cd website-api
 ```
 
-You need to have [Python3](https://www.python.org/downloads/) installed in order to compile
-from the source code.
+You need to have <a href="https://bun.sh/"><img src="images/bun.svg" width="16" height="16" style="position: relative; top: 3px;" /> Bun</a> installed in order to compile from the source code.
 
 # Building :hammer:
 
@@ -44,13 +42,13 @@ You need to install all the requirements first, so type the following into the
 terminal of your choice:
 ```bash
 # install requirements
-pip install -r requirements.txt
+bun install
 ```
 
 You can now run the RESTful API server by typing the following:
 ```bash
 # run locally
-python main.py
+bun run dev
 ```
 
-The RESTful API is now accessible at http://localhost:5000 :tada:
+The RESTful API is now accessible at http://localhost:8787 :tada:
