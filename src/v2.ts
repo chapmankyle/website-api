@@ -3,53 +3,56 @@ import { cors } from 'hono/cors'
 
 import { default as data } from './data.json'
 
-interface Experience {
-  id: number
-  startDate: string
-  endDate: string
-  title: string
-  type: string
-  company: string
-  description: string
-  technologies: string[]
-  dateAsString?: string
-}
+import type { IData } from './types'
 
 /** Base URL for the API */
 const BASE_URL = '/v2'
 
-/** Parses the data from the JSON file, adding any necessary information */
-const parseData = () => {
-  const parsed = JSON.parse(JSON.stringify(data))
-  const hasExperience = parsed.experience != null && Array.isArray(parsed.experience) && parsed.experience.length > 0
+/** Parses the data from the JSON file */
+const parseData = (): IData => {
+  const parsed = (JSON.parse(JSON.stringify(data))) as IData
 
   // Ensure experience is sorted by id
-  if (hasExperience) {
-    parsed.experience.sort((a: Experience, b: Experience) => b.id - a.id)
-
-    const mostRecent = parsed.experience[0]
-    if (mostRecent.endDate.toLowerCase() === 'present' && typeof mostRecent.dateAsString === 'string') {
-      const now = new Date()
-      const started = new Date(mostRecent.dateAsString)
-
-      let months = (now.getFullYear() - started.getFullYear()) * 12
-      months -= started.getMonth()
-      months += now.getMonth() + 1
-
-      let years = Math.floor(months / 12)
-      months = months % 12
-
-      const yearsStr = years > 0 ? `${years} yr${years === 1 ? '' : 's'}` : ''
-      const monthStr = months > 0 ? `${months} mo${months === 1 ? '' : 's'}` : ''
-
-      parsed.experience[0].duration = yearsStr.length > 0 ? `${yearsStr} ${monthStr}` : monthStr
-    }
+  if (parsed.experience != null && Array.isArray(parsed.experience) && parsed.experience.length > 0) {
+    parsed.experience.sort((a, b) => b.id - a.id)
   }
 
   return parsed
 }
 
-// Make sure data is parsed before we start
+/**
+ * Adds the duration to the experience object at the given index.
+ * @param index Index into the experience array to add duration to.
+ * @param data Data object to modify.
+ */
+const addDuration = (index: number, data: IData): void => {
+  const experience = data.experience
+  if (!experience || !Array.isArray(experience) || experience.length < 1) {
+    return
+  }
+
+  const mostRecent = experience[index]
+  if (typeof mostRecent.dateAsString !== 'string') {
+    return
+  }
+
+  const now = new Date() // Since we are inside a worker, we cannot use the date from the global context
+  const started = new Date(mostRecent.dateAsString)
+
+  let months = (now.getFullYear() - started.getFullYear()) * 12
+  months -= started.getMonth()
+  months += now.getMonth() + 1
+
+  const years = Math.floor(months / 12)
+  months = months % 12
+
+  const yearsStr = years > 0 ? `${years} yr${years === 1 ? '' : 's'}` : ''
+  const monthStr = months > 0 ? `${months} mo${months === 1 ? '' : 's'}` : ''
+
+  data.experience[index].duration = yearsStr.length > 0 ? `${yearsStr} ${monthStr}` : monthStr
+}
+
+// Make sure we have a parsed version of the data
 const PARSED_DATA = parseData()
 
 // Create API routes
@@ -64,12 +67,21 @@ api.get(`${BASE_URL}/:id`, c => {
   }
 
   if (id === 'all') {
+    if (typeof PARSED_DATA.experience[0].duration != 'string' || PARSED_DATA.experience[0].duration.length < 1) {
+      addDuration(0, PARSED_DATA)
+    }
+
     return c.json({ data: PARSED_DATA, ok: true }, 200)
   }
 
-  const item = PARSED_DATA[id]
+  let item = PARSED_DATA[id]
   if (!item) {
     return c.json({ message: 'Not Found', ok: false }, 404)
+  }
+
+  if (id === 'experience' && (typeof item[0].duration != 'string' || item[0].duration.length < 1)) {
+    addDuration(0, PARSED_DATA)
+    item = PARSED_DATA[id]
   }
 
   return c.json({ data: item, ok: true }, 200)
