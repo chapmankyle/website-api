@@ -8,6 +8,11 @@ export interface IMetadata {
   languages: string[]
 }
 
+export interface ILocation {
+  flag: string
+  name: string
+}
+
 export interface IExperience {
   id: number
   startDate: string
@@ -18,13 +23,26 @@ export interface IExperience {
   imagePath: string
   description: string
   technologies: string[]
+  location: ILocation
   dateAsString?: string
   duration?: string
+}
+
+export interface IEducation {
+  id: number
+  startYear: string
+  endYear: string
+  title: string
+  school: string
+  imagePath: string
+  description: string
+  location: ILocation
 }
 
 export interface IData {
   metadata: IMetadata
   experience: IExperience[]
+  education: IEducation[]
 
   [key: string]: any // Allow indexing by string
 }
