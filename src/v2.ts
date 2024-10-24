@@ -46,10 +46,10 @@ const addDuration = (index: number, data: IData): void => {
   const years = Math.floor(months / 12)
   months = months % 12
 
-  const yearsStr = years > 0 ? `${years} yr${years === 1 ? '' : 's'}` : ''
-  const monthStr = months > 0 ? `${months} mo${months === 1 ? '' : 's'}` : ''
-
-  data.experience[index].duration = yearsStr.length > 0 ? `${yearsStr} ${monthStr}` : monthStr
+  data.experience[index].duration = {
+    years,
+    months
+  }
 }
 
 // Make sure we have a parsed version of the data
@@ -67,7 +67,7 @@ api.get(`${BASE_URL}/:id`, c => {
   }
 
   if (id === 'all') {
-    if (typeof PARSED_DATA.experience[0].duration != 'string' || PARSED_DATA.experience[0].duration.length < 1) {
+    if (typeof PARSED_DATA.experience[0].duration != 'object' || Object.keys(PARSED_DATA.experience[0].duration).length < 1) {
       addDuration(0, PARSED_DATA)
     }
 
@@ -79,7 +79,7 @@ api.get(`${BASE_URL}/:id`, c => {
     return c.json({ message: 'Not Found', ok: false }, 404)
   }
 
-  if (id === 'experience' && (typeof item[0].duration != 'string' || item[0].duration.length < 1)) {
+  if (id === 'experience' && (typeof item[0].duration != 'object' || Object.keys(item[0].duration).length < 1)) {
     addDuration(0, PARSED_DATA)
     item = PARSED_DATA[id]
   }
