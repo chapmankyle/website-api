@@ -12,6 +12,6 @@ app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404))
 app.use(prettyJSON())
 
 // Route with new API
-app.route('/api', api)
+app.route('/v2', api)
 
 export default app

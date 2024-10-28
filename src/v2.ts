@@ -1,12 +1,8 @@
 import { Hono } from 'hono'
-import { cors } from 'hono/cors'
 
 import { default as data } from './data.json'
 
 import type { IData } from './types'
-
-/** Base URL for the API */
-const BASE_URL = '/v2'
 
 /** Parses the data from the JSON file */
 const parseData = (): IData => {
@@ -57,10 +53,9 @@ const PARSED_DATA = parseData()
 
 // Create API routes
 const api = new Hono()
-api.use(`${BASE_URL}/*`, cors())
 
 // Gets all data or subset from our data file
-api.get(`${BASE_URL}/:id`, c => {
+api.get('/:id', c => {
   const id = c.req.param('id')
   if (!id) {
     return c.json({ message: 'Not Found', ok: false }, 404)
