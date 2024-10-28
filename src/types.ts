@@ -24,7 +24,7 @@ export interface IExperience {
   startDate: string
   endDate: string
   title: string
-  type: "Full-time" | "Part-time" | "Internship"
+  type: 'Full-time' | 'Part-time' | 'Internship'
   company: string
   imagePath: string
   description: string
