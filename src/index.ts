@@ -5,7 +5,6 @@ import { cors } from 'hono/cors'
 import { csrf } from 'hono/csrf'
 import { bearerAuth } from 'hono/bearer-auth'
 import { sign, verify } from 'hono/jwt'
-import { getCookie, setCookie, deleteCookie } from 'hono/cookie'
 
 import api from './v2'
 
@@ -57,8 +56,6 @@ app.post('/authorize', async (c) => {
   }
 
   const token = await sign(payload, c.env.JWT_SECRET)
-  setCookie(c, 'token', token)
-
   return c.json({
     payload,
     token
@@ -71,16 +68,10 @@ app.use('/v2/*', bearerAuth({
     try {
       await verify(token, c.env.JWT_SECRET)
     } catch (e) {
-      deleteCookie(c, 'token')
       return false
     }
 
-    const cookieToken = getCookie(c, 'token')
-    if (!cookieToken) {
-      return false
-    }
-
-    return token === cookieToken
+    return true
   }
 }))
 app.route('/v2', api)
