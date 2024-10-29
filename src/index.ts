@@ -1,18 +1,27 @@
 import { Hono } from 'hono'
+import { prettyJSON } from 'hono/pretty-json'
+
 import { cors } from 'hono/cors'
 import { csrf } from 'hono/csrf'
-import { prettyJSON } from 'hono/pretty-json'
+import { bearerAuth } from 'hono/bearer-auth'
+import { sign, verify } from 'hono/jwt'
+import { getCookie, setCookie, deleteCookie } from 'hono/cookie'
 
 import api from './v2'
 
 // Only host that is allowed access to this API
 const ALLOWED_HOST = 'kylechapman.dev'
 
-// Create app
-const app = new Hono()
-app.get('/', (c) => c.text('Welcome!'))
+type Bindings = {
+  USERNAME: string
+  PASSWORD: string
+  JWT_SECRET: string
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404))
 
+// -- Middleware --
 app.use(prettyJSON())
 
 // Only allow requests from my domain
@@ -22,13 +31,57 @@ app.use('/*', cors({
       ? origin
       : `https://${ALLOWED_HOST}`
   },
-  allowMethods: ['GET']
+  allowMethods: ['GET', 'POST']
 }))
 
 // CSRF protection
 app.use(csrf({ origin: ALLOWED_HOST }))
 
+// -- Routes --
+app.get('/', (c) => c.json({ message: 'Welcome!', ok: true }, 200))
+
+app.post('/authorize', async (c) => {
+  const VALID_USERNAME = c.env.USERNAME
+  const VALID_PASSWORD = c.env.PASSWORD
+
+  const { username, password } = await c.req.json()
+  if (username !== VALID_USERNAME || password !== VALID_PASSWORD) {
+    return c.json({ message: 'Unauthorized', ok: false }, 401)
+  }
+
+  const payload = {
+    role: 'admin',
+    exp: Math.floor(Date.now() / 1000) + 30, // Token expires in 30 seconds
+    iat: Math.floor(Date.now() / 1000)
+  }
+
+  const token = await sign(payload, c.env.JWT_SECRET)
+  setCookie(c, 'token', token)
+
+  return c.json({
+    payload,
+    token
+  })
+})
+
 // Route with new API
+app.use('/v2/*', bearerAuth({
+  verifyToken: async (token, c) => {
+    try {
+      await verify(token, c.env.JWT_SECRET)
+    } catch (e) {
+      deleteCookie(c, 'token')
+      return false
+    }
+
+    const cookieToken = getCookie(c, 'token')
+    if (!cookieToken) {
+      return false
+    }
+
+    return token === cookieToken
+  }
+}))
 app.route('/v2', api)
 
 export default app
