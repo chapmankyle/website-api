@@ -9,6 +9,9 @@
     "about": "I started learning JavaScript to prepare for IT classes in school, only to realize that we were actually getting taught Java. Ever since then, I've learnt to read more carefully. Now I have more than 3 years of professional experience and still have the same passion to learn that I've had since that day.",
     "languages": ["React", "TypeScript", "Ruby on Rails", "Python", "Docker"]
   },
+  "contact": {
+    "email": "contact@kylechapman.dev"
+  },
   "experience": [
     {
       "id": 7,
