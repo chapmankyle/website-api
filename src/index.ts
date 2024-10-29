@@ -49,10 +49,11 @@ app.post('/authorize', async (c) => {
     return c.json({ message: 'Unauthorized', ok: false }, 401)
   }
 
+  const now = Math.floor(Date.now() / 1000)
   const payload = {
     role: 'admin',
-    exp: Math.floor(Date.now() / 1000) + 30, // Token expires in 30 seconds
-    iat: Math.floor(Date.now() / 1000)
+    exp: now + 30, // Token expires in 30 seconds
+    iat: now
   }
 
   const token = await sign(payload, c.env.JWT_SECRET)
