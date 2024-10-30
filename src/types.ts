@@ -9,6 +9,12 @@ export interface IMetadata {
   languages: readonly string[]
 }
 
+export interface IContact {
+  email: string
+  linkedin: string
+  github: string
+}
+
 export interface ILocation {
   flag: string
   name: string
