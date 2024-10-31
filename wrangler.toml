@@ -1,0 +1,6 @@
+name = "website-api"
+main = "src/index.ts"
+minify = true
+compatibility_date = "2024-10-22"
+compatibility_flags = [ "nodejs_compat" ]
+assets = { directory = "public" }
