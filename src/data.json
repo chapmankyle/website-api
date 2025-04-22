@@ -6,7 +6,7 @@
     "location": "Amsterdam, Netherlands",
     "title": "Full Stack Engineer",
     "summary": "I love learning new things and working on interesting projects",
-    "about": "I started learning JavaScript to prepare for IT classes in school, only to realize that we were actually getting taught Java. Ever since then, I've learnt to read more carefully. Now I have more than 3 years of professional experience and still have the same passion to learn that I've had since that day.",
+    "about": "I started learning JavaScript to prepare for IT classes in school, only to realize that we were actually getting taught Java. Ever since then, I've learnt to read more carefully. Now I have more than 4 years of professional experience and still have the same passion to learn that I've had since that day.",
     "languages": ["React", "TypeScript", "Ruby on Rails", "Python", "Docker"]
   },
   "contact": {
@@ -43,8 +43,8 @@
       "type": "Full-time",
       "company": "ydangle apps (Pty) Ltd.",
       "imagePath": "/static/ydangle-logo.jpg",
-      "description": "After 7 months, I was promoted to **lead** the 3D website project.\n\nAs the **lead developer**, some of my responsibilities were:\n- **Development**: 40% frontend / 50% backend / 10% maintenance\n- Implementation of **Slack and Teams** integrations to join worlds from outside our website\n- Implementation of **Sketchfab** integration to allow users to pull 3D models into their worlds\n- Implementation of a fully-fledged **achievement system** to gamify the experience, which lead to a 21% increase in monthly active users (MAU).\n- **Production** deployments\n- Performing **code reviews**\n- **Mentoring** new colleagues",
-      "technologies": ["React", "TypeScript", "Firebase", "three.js", "Node.js"],
+      "description": "After 7 months, I was promoted to **lead** the 3D website project.\n\nAs the **lead developer**, some of my responsibilities were:\n- **Development**: 65% frontend / 30% backend / 5% maintenance\n- Implementation of **Slack and Teams** integrations to join worlds from outside our website\n- Implementation of **Sketchfab** integration to allow users to pull 3D models into their worlds\n- Implementation of a fully-fledged **achievement system** to gamify the experience, which lead to a 21% increase in monthly active users (MAU).\n- **Production** deployments\n- Performing **code reviews**\n- **Mentoring** new colleagues",
+      "technologies": ["React", "TypeScript", "Firebase", "Styled Components", "three.js", "Node.js"],
       "location": {
         "flag": "🇿🇦",
         "name": "Cape Town, South Africa"
@@ -64,7 +64,7 @@
       "company": "ydangle apps (Pty) Ltd.",
       "imagePath": "/static/ydangle-logo.jpg",
       "description": "I was part of a team that was developing a **3D, social website** which allowed users to interact with each other (using voice and video) in a **shared** world, **editable** by admins of the world.\n\nSome of my responsibilities were:\n- **Development**: 50% frontend / 45% backend / 5% maintenance\n- Implementation of an **editor system** so that worlds could be customizable, such as **changing the skybox** and **moving/scaling/rotating** objects in 3D space\n- Implementation of a **chat system** that supported typing indicators, threads, emojis, message reactions and more\n- Overhauled the **UI/UX** to make the website more visually appealing and easier to use",
-      "technologies": ["React", "JavaScript", "Firebase", "three.js", "Node.js"],
+      "technologies": ["React", "JavaScript", "Firebase", "Styled Components", "three.js", "Node.js"],
       "location": {
         "flag": "🇿🇦",
         "name": "Cape Town, South Africa"
