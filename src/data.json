@@ -16,15 +16,33 @@
   },
   "experience": [
     {
-      "id": 6,
-      "dateAsString": "2024-04-01",
-      "startDate": "Apr 2024",
+      "id": 7,
+      "dateAsString": "2025-07-01",
+      "startDate": "Jul 2025",
       "endDate": "present",
+      "title": "Full Stack Software Engineer I",
+      "type": "Full-time",
+      "company": "Booking.com B.V.",
+      "imagePath": "/static/booking-logo.jpg",
+      "technologies": ["TypeScript", "Node.js", "React", "Java", "Spring Boot", "Perl"],
+      "location": {
+        "flag": "🇳🇱",
+        "name": "Amsterdam, Netherlands"
+      }
+    },
+    {
+      "id": 6,
+      "startDate": "Apr 2024",
+      "endDate": "Jun 2025",
+      "duration": {
+        "years": 1,
+        "months": 3
+      },
       "title": "Full Stack Engineer",
       "type": "Full-time",
       "company": "Zilverline B.V.",
       "imagePath": "/static/zilverline-logo.jpg",
-      "description": "I am part of a team that is developing a **multi-tenant, e-commerce platform** that facilitates buying products from a **range of shops**. Supports **various payment methods** (iDEAL, Klarna, etc.) product returns, order tracking (DHL & PostNL), promotions, coupon codes, and more.\n\nSome of my responsibilities are:\n- **Development**: 50% frontend / 40% backend / 10% maintenance\n- **Shop onboarding overhaul** to increase the number of shops onboarded\n- Dashboard **UI/UX** updates to make it easier for shop owners to find the information they need\n- **Prompt engineering** using OpenAI models to **automatically generate** product descriptions, about pages and more\n- **Production** deployments\n- Performing **code reviews**",
+      "description": "I was part of a team that was developing a **multi-tenant, e-commerce platform** that facilitated buying products from a **range of shops**. It supported **various payment methods** (iDEAL, Klarna, etc.) product returns, order tracking (DHL & PostNL), promotions, coupon codes, and more.\n\nSome of my responsibilities were:\n- **Development**: 50% frontend / 40% backend / 10% maintenance\n- **Shop onboarding overhaul** to increase the number of shops onboarded\n- Dashboard **UI/UX** updates to make it easier for shop owners to find the information they need\n- **Prompt engineering** using OpenAI models to **automatically generate** product descriptions, about pages and more\n- **Production** deployments\n- Performing **code reviews**",
       "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "Bootstrap", "Node.js", "PostgreSQL", "GitHub Actions"],
       "location": {
         "flag": "🇳🇱",

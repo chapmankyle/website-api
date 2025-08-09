@@ -28,7 +28,10 @@ const addDuration = (index: number, data: IData): void => {
   }
 
   const mostRecent = experience[index]
-  if (typeof mostRecent.dateAsString !== 'string') {
+
+  // Do not add duration if we do not have starting date as parseable string, or
+  // if there is a duration already defined
+  if (typeof mostRecent.dateAsString !== 'string' || typeof mostRecent.duration != null) {
     return
   }
 

@@ -26,11 +26,14 @@ app.use(prettyJSON())
 // Only allow requests from my domain
 app.use('/*', cors({
   origin: (origin, c) => {
-    return origin.endsWith(ALLOWED_HOST)
-      ? origin
-      : `https://${ALLOWED_HOST}`
+    // Exact match for the domain or www subdomain only
+    const allowedOrigins = [`https://${ALLOWED_HOST}`, `https://www.${ALLOWED_HOST}`]
+    return allowedOrigins.includes(origin) ? origin : `https://${ALLOWED_HOST}`
   },
-  allowMethods: ['GET', 'POST']
+  allowMethods: ['GET', 'POST'],
+  allowHeaders: ['Authorization', 'Content-Type'],
+  exposeHeaders: ['Content-Length'],
+  maxAge: 3600
 }))
 
 // CSRF protection
@@ -55,10 +58,20 @@ app.post('/authorize', async (c) => {
     iat: now
   }
 
+  // Create refresh token with longer expiration
+  const refreshPayload = {
+    role: 'refresh',
+    exp: now + 3600, // Refresh token expires in 1 hour
+    iat: now
+  }
+
   const token = await sign(payload, c.env.JWT_SECRET)
+  const refreshToken = await sign(refreshPayload, c.env.JWT_SECRET)
+
   return c.json({
     payload,
-    token
+    token,
+    refreshToken
   })
 })
 
@@ -66,12 +79,26 @@ app.post('/authorize', async (c) => {
 app.use('/v2/*', bearerAuth({
   verifyToken: async (token, c) => {
     try {
-      await verify(token, c.env.JWT_SECRET)
+      const payload = await verify(token, c.env.JWT_SECRET)
+
+      // Check if token is expired by checking current time against exp
+      const now = Math.floor(Date.now() / 1000)
+      if (payload.exp && payload.exp < now) {
+        console.error('Token expired')
+        return false
+      }
+
+      // Check if token has the correct role
+      if (payload.role !== 'admin') {
+        console.error('Invalid role in token')
+        return false
+      }
+
+      return true
     } catch (e) {
+      console.error('Token verification failed:', e)
       return false
     }
-
-    return true
   }
 }))
 app.route('/v2', api)
