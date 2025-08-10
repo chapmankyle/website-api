@@ -11,10 +11,26 @@ import api from './v2'
 // Only host that is allowed access to this API
 const ALLOWED_HOST = 'kylechapman.dev'
 
-type Bindings = {
+// URLs that are allowed to access this API
+const ALLOWED_URLS = [`https://${ALLOWED_HOST}`]
+
+// Token expiration times (in seconds)
+const TOKEN_EXPIRY = {
+  development: 3600, // 1 hour in development
+  production: 30     // 30 seconds in production
+}
+
+// Refresh token expiry times (in seconds)
+const REFRESH_TOKEN_EXPIRY = {
+  development: 86400, // 24 hours in development
+  production: 3600    // 1 hour in production
+}
+
+export type Bindings = {
   USERNAME: string
   PASSWORD: string
   JWT_SECRET: string
+  ENVIRONMENT?: string // Optional environment variable
 }
 
 const app = new Hono<{ Bindings: Bindings }>()
@@ -23,12 +39,13 @@ app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404))
 // -- Middleware --
 app.use(prettyJSON())
 
-// Only allow requests from my domain
+// Only allow requests from certain URLs
 app.use('/*', cors({
   origin: (origin, c) => {
-    // Exact match for the domain or www subdomain only
-    const allowedOrigins = [`https://${ALLOWED_HOST}`, `https://www.${ALLOWED_HOST}`]
-    return allowedOrigins.includes(origin) ? origin : `https://${ALLOWED_HOST}`
+    const isDevelopment = c.env.ENVIRONMENT === 'development'
+    return isDevelopment
+      ? origin
+      : ALLOWED_URLS.includes(origin) ? origin : `https://${ALLOWED_HOST}`
   },
   allowMethods: ['GET', 'POST'],
   allowHeaders: ['Authorization', 'Content-Type'],
@@ -46,6 +63,10 @@ app.post('/authorize', async (c) => {
   const VALID_USERNAME = c.env.USERNAME
   const VALID_PASSWORD = c.env.PASSWORD
 
+  // Determine environment (default to production for security)
+  const environment = c.env.ENVIRONMENT === 'development' ? 'development' : 'production'
+  console.log(`Running in ${environment} environment`)
+
   const { username, password } = await c.req.json()
   if (username !== VALID_USERNAME || password !== VALID_PASSWORD) {
     return c.json({ message: 'Unauthorized', ok: false }, 401)
@@ -54,14 +75,14 @@ app.post('/authorize', async (c) => {
   const now = Math.floor(Date.now() / 1000)
   const payload = {
     role: 'admin',
-    exp: now + 30, // Token expires in 30 seconds
+    exp: now + TOKEN_EXPIRY[environment], // Token expiry based on environment
     iat: now
   }
 
   // Create refresh token with longer expiration
   const refreshPayload = {
     role: 'refresh',
-    exp: now + 3600, // Refresh token expires in 1 hour
+    exp: now + REFRESH_TOKEN_EXPIRY[environment], // Refresh token expiry based on environment
     iat: now
   }
 

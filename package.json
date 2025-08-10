@@ -1,5 +1,6 @@
 {
   "name": "website-api",
+  "version": "2.0.1",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify"

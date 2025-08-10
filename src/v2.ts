@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 
 import { default as data } from './data.json'
 
-import type { IData } from './types'
+import type { IContact, IData, IEducation, IExperience, IMetadata, IProject } from './types'
 
 /** Parses the data from the JSON file */
 const parseData = (): IData => {
@@ -17,26 +17,16 @@ const parseData = (): IData => {
 }
 
 /**
- * Adds the duration to the experience object at the given index.
- * @param index Index into the experience array to add duration to.
- * @param data Data object to modify.
+ * Calculates the duration from the experience object at the given index.
+ * @param dateStr String version of the date that we want to calulcate duration from.
  */
-const addDuration = (index: number, data: IData): void => {
-  const experience = data.experience
-  if (!experience || !Array.isArray(experience) || experience.length < 1) {
-    return
-  }
-
-  const mostRecent = experience[index]
-
-  // Do not add duration if we do not have starting date as parseable string, or
-  // if there is a duration already defined
-  if (typeof mostRecent.dateAsString !== 'string' || typeof mostRecent.duration != null) {
+const calculateDuration = (dateStr: string | undefined): { years: number, months: number } | undefined => {
+  if (!dateStr || dateStr.length < 1) {
     return
   }
 
   const now = new Date() // Since we are inside a worker, we cannot use the date from the global context
-  const started = new Date(mostRecent.dateAsString)
+  const started = new Date(dateStr)
 
   let months = (now.getFullYear() - started.getFullYear()) * 12
   months -= started.getMonth()
@@ -45,10 +35,7 @@ const addDuration = (index: number, data: IData): void => {
   const years = Math.floor(months / 12)
   months = months % 12
 
-  data.experience[index].duration = {
-    years,
-    months
-  }
+  return { years, months }
 }
 
 // Make sure we have a parsed version of the data
@@ -66,20 +53,29 @@ api.get('/:id', c => {
 
   if (id === 'all') {
     if (typeof PARSED_DATA.experience[0].duration != 'object' || Object.keys(PARSED_DATA.experience[0].duration).length < 1) {
-      addDuration(0, PARSED_DATA)
+      const duration = calculateDuration(PARSED_DATA.experience[0].dateAsString)
+      if (duration != null) {
+        PARSED_DATA.experience[0].duration = duration
+      }
     }
 
     return c.json({ data: PARSED_DATA, ok: true }, 200)
   }
 
-  let item = PARSED_DATA[id]
+  let item: (IExperience[] | IEducation[] | IProject[] | IMetadata | IContact) = PARSED_DATA[id]
   if (!item) {
     return c.json({ message: 'Not Found', ok: false }, 404)
   }
 
-  if (id === 'experience' && (typeof item[0].duration != 'object' || Object.keys(item[0].duration).length < 1)) {
-    addDuration(0, PARSED_DATA)
-    item = PARSED_DATA[id]
+  if (id === 'experience') {
+    item = item as IExperience[]
+
+    if (typeof item[0].duration != 'object' || Object.keys(item[0].duration).length < 1) {
+      const duration = calculateDuration(item[0].dateAsString)
+      if (duration != null) {
+        item[0].duration = duration
+      }
+    }
   }
 
   return c.json({ data: item, ok: true }, 200)
